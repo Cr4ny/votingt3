@@ -6,7 +6,7 @@ import {NotFoundComponent} from "./not-found/not-found.component";
 
 const routes: Routes = [
   {path: "", component: NoGroupComponent},
-  {path: ":group", component: VoteSelectorComponent},
+  {path: "/:group", component: VoteSelectorComponent},
   {path: "**", component: NotFoundComponent},
 ];
 
