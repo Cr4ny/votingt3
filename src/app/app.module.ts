@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { VoteSelectorComponent } from './vote-selector/vote-selector.component';
 import {NotFoundComponent} from "./not-found/not-found.component";
 import {NoGroupComponent} from "./no-group/no-group.component";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {NoGroupComponent} from "./no-group/no-group.component";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
