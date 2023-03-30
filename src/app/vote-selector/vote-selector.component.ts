@@ -17,7 +17,8 @@ interface QuestionResponse {
   title: string,
   message: string | {
     "event": "question_event",
-    "questions" : string[]
+    "questions" : string[],
+    darkmode:boolean
   },
   tags: string[],
   attachment: {
@@ -37,9 +38,8 @@ export class VoteSelectorComponent implements OnInit{
   questionsTopic : string = "topic_question_event_tester";
   questionId : string = "";
   questions ? : string[];
-
-  colorPalette : string [] = [ "#F58B44", "#F58B44", "#F58B44", "#F58B44", "#F58B44", "#F58B44", "#F58B44", "#F58B44", "#F58B44"];
   voted: boolean = false;
+  darkmode: boolean = false;
 
   constructor(private http: HttpClient, private zone : NgZone, private route: ActivatedRoute, private groupService : GroupService) {}
 
@@ -50,6 +50,11 @@ export class VoteSelectorComponent implements OnInit{
         this.groupService.groupName = this.groupName;
       }
       console.log(this.groupName);
+      if(this.darkmode){
+        document.body.classList.add('dark-mode');
+      }else{
+        document.body.classList.remove('dark-mode');
+      }
     });
 
     const eventSource = new EventSource(`https://ntfy.sh/${this.groupName + "_question_topic"}/sse`);
@@ -60,10 +65,17 @@ export class VoteSelectorComponent implements OnInit{
           const actualEvent : QuestionResponse = this.decodeMessageFromBase64(JSON.parse(eventWrapper.data));
           this.questionId = actualEvent.id;
 
+
           // decoded already
           if (typeof actualEvent.message !== "string") {
             this.questions = actualEvent.message.questions;
             this.groupService.hasQuestions = true;
+            this.darkmode = actualEvent.message.darkmode;
+            if(this.darkmode){
+              document.body.classList.add('dark-mode');
+            }else{
+              document.body.classList.remove('dark-mode');
+            }
           }
           console.log(actualEvent);
         }

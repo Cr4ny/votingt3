@@ -9,6 +9,7 @@ import { VoteSelectorComponent } from './vote-selector/vote-selector.component';
 import {NotFoundComponent} from "./not-found/not-found.component";
 import {NoGroupComponent} from "./no-group/no-group.component";
 import {HttpClientModule} from "@angular/common/http";
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {HttpClientModule} from "@angular/common/http";
     HomeComponent,
     VoteSelectorComponent,
     NotFoundComponent,
-    NoGroupComponent
+    NoGroupComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,353 @@
+@import 'bulma/css/bulma.css';
+@import 'bulma-switch/dist/css/bulma-switch.min.css';
+
+
+
+body.dark-mode{
+  --background-color: #1D1E22;
+  --text-color: #A8A8A8;
+  --primary-color: #443b39;
+  --primary-color-hover: #454b52;
+  --primary-color-active: #525a62;
+  --primary-button-color: #A8A8A8;
+  --secondary-color: #85664e;
+  --accent-color: #8c6241;
+  --info-color: #2A384D;
+  --tag-color: #A8A8A8;
+  --navbar-color: transparent;
+  --button-outline-color: #6A7680;
+  --button-focus-color: rgba(155, 153, 158, 0.22);
+  --disabled-button-color: #57575C;
+  --menu-list-color: #A8A8A8;
+  --liactive-border-color: #BBBBBB;
+  --liactive-bg-color: #2A384D;
+  --star-rating-color: linear-gradient(to right, #a99b4c, #c47f59);
+  --card-bg-color: #2b2d33;
+  --card-box-shadow: 0 1px 1px 0 rgba(255, 137, 98, 0.18), 0 6px 20px 0 rgba(131, 131, 131, 0.23);
+  --input-field-color: #BBBBBBFF;
+  --message-background-color: #383a42;
+  --play-button-color: #484545;
+  --play-button-hover-color: #524f4f;
+  --play-button-active-color: #737373;
+  --tabs-li-isactive: #9f7b45;
+  --button-text-color: #b4b3b3;
+  --button-background-color: #3b3c44;
+
+}
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  --background-color: #EDEDE9;
+  --text-color: #313131;
+  --primary-color: #46363A;
+  --primary-color-hover: #6a5258;
+  --primary-color-active: #6a5258;
+  --primary-button-color: #fff;
+  --secondary-color: #6a5258;
+  --accent-color: #b28893;
+  --info-color: #0F1D38;
+  --tag-color: #fff;
+  --navbar-color: transparent;
+  --button-outline-color: #46363A;
+  --button-focus-color: rgba(86, 66, 70, 0.22);
+  --disabled-button-color: #7e6067;
+  --menu-list-color: #0F1D38;
+  --liactive-border-color: #333;
+  --liactive-bg-color: whitesmoke;
+  --star-rating-color: linear-gradient(to right, #f6d365, #fda085);
+  --card-bg-color: #c4c4c4;
+  --card-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  --input-field-color: white;
+  --message-background-color: #fafafa;
+  --play-button-color: #46363A ;
+  --play-button-hover-color: #6a5258;
+  --play-button-active-color: #6a5258;
+  --tabs-li-isactive: #485fc7;
+  --button-text-color: #313131;
+  --button-background-color: white;
+
+}
+
+body {
+  font-family: 'Georgia';
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+body, html {
+  height: 100%;
+  background-color: var(--background-color);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+}
+
+
+
+
+#mainContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#contentWrapper {
+  flex: 1;
+}
+
+.card {
+  background-color: var(--card-bg-color);
+  box-shadow: var(--card-box-shadow);
+  border-radius: 0.5rem;
+}
+
+.navbar {
+  background-color: var(--navbar-color);
+  height: 50px;
+}
+
+.button.is-primary {
+  background-color: var(--primary-color);
+  border-color: transparent;
+  color: var(--primary-button-color);
+}
+
+.button.is-primary:hover, .button.is-primary.is-hovered {
+  background-color: var(--secondary-color);
+  border-color: transparent;
+  color: var(--primary-button-color);
+}
+
+.button.is-primary:active, .button.is-primary.is-active {
+  background-color: var(--secondary-color);
+  border-color: transparent;
+  color: var(--primary-button-color);
+}
+
+.button.is-primary.is-outlined {
+  background-color: transparent;
+  border-color: var(--button-outline-color);
+  color: var(--button-outline-color);
+}
+
+.button.is-primary:focus:not(:active), .button.is-primary.is-focused:not(:active) {
+  box-shadow: 0 0 0 0.125em var(--button-focus-color);
+}
+
+.button.is-primary[disabled], fieldset[disabled] .button.is-primary {
+  background-color: var(--disabled-button-color);
+  border-color: var(--disabled-button-color);
+  box-shadow: none;
+}
+
+.menu-list a, .menu-list p {
+  color: var(--menu-list-color);
+  font-weight: 200;
+}
+.menu-list li:hover > a {
+  background-color: var(--liactive-bg-color);
+  color: var(--text-color);
+}
+
+.tag:not(body).is-link {
+  background-color: var(--primary-color);
+  color: var(--tag-color);
+}
+
+.button.is-info {
+  background-color: var(--primary-color);
+  border-color: transparent;
+  color: var(--tag-color);
+}
+
+.button.is-info:hover, .button.is-info.is-hovered {
+  background-color: var(--accent-color);
+  border-color: transparent;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.liactive {
+  border-left: 3px solid var(--liactive-border-color);
+  background-color: var(--liactive-bg-color);
+}
+.star-rating .fa-star.active, .yellow {
+  background: var(--star-rating-color);
+
+  /*TODO replace webkit with appropriate css*/
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-equal-height {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.button {
+  white-space: normal;
+  text-align: left;
+  word-break: break-word;
+}
+
+
+
+.card a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.card a:hover {
+  /* No specific color rule to be replaced */
+}
+
+.rise {
+  transform: translateX(0) translateY(0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+}
+
+.is-duration-300 {
+  transition-duration: 0.3s;
+}
+
+.hover-translate-y:hover {
+  transform: translateX(0) translateY(-0.45rem) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+}
+
+.hover-shadow-xl:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.09);
+}
+
+.navbar-item, .navbar-link {
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato';
+}
+
+.title {
+  color:var(--text-color);
+}
+
+.subtitle{
+  color:var(--text-color);
+}
+
+.box, .box .label {
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+}
+
+.box .input {
+  background-color: var(--input-field-color);
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.navbar-dropdown {
+  background-color: var(--card-bg-color);
+  border-top-color: var(--primary-color);
+}
+.navbar-dropdown a.navbar-item {
+  color: var(--text-color);
+}
+.footer {
+  margin-top: auto;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.footer a {
+  color: var(--text-color);
+}
+
+.footer a:hover {
+  color: var(--accent-color);
+}
+strong {
+  color: var(--text-color);
+}
+
+.message * {
+  background-color: var(--message-background-color);
+  color: var(--text-color);
+}
+
+.message.is-dark .message-body {
+  border-color: var(--text-color);
+}
+
+.play-button {
+  background-color: var(--play-button-color);
+  color: var(--text-color);
+}
+
+.play-button:hover {
+  background-color: var(--play-button-hover-color);
+  color: var(--primary-button-color);
+}
+.play-button:active {
+  background-color: var(--play-button-active-color);
+}
+
+.tabs li.is-active a {
+  border-bottom-color: var(--tabs-li-isactive);
+  color: var(--tabs-li-isactive);
+}
+
+.button {
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+}
+
+.button:hover {
+  color: var(--text-color);
+  background-color: var(--button-background-color)+10;
+}
+
+.button.is-light {
+  color: var(--text-color);
+  background-color: var(--button-background-color);
+
+}
+
+.progress::-webkit-progress-bar {
+  background-color: transparent;
+}
+.progress::-webkit-progress-value {
+  border-radius: 10px;
+}
+
+
+
+
